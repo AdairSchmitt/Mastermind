@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class mastermind
-//Helpppp
+//testing 1 2 3 
 	{
 		static String [][] board= new String [9][3];
 		static String [][] key = new String [1][3];
