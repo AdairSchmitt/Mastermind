@@ -2,6 +2,13 @@ import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class mastermind
+// TO DO: Make levels or let player choose the size of the board or just change colors????
+// Idea about above:	make new String[info*3][info+1]
+// put key responses in a for loop -> need another counter???? how to make it work with different board sizes??
+// fix key with the board?
+// make sure that it will add as many input colors as needed? -> put in for loop!!!!
+// add variables select and spotKey AHHHHHHHHHHH
+// HELPPPPPPPPPPP
 
 	{
 		static String [][] board= new String [9][4];
@@ -12,7 +19,7 @@ public class mastermind
 		public static void main(String[] args)
 			{
 				prepBoard();
-				displayBoard();
+				//displayBoard();
 				prepKey();
 				
 				instructions();
