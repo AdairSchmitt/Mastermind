@@ -1,3 +1,5 @@
+import java.util.Collections;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class mastermind
 
@@ -20,7 +22,7 @@ public class mastermind
 				displayBoard();
 				selectColor();
 				checkSelect(select, select2, select3);
-				addSelect();
+				//addSelect();
 				checkGame(spotKey1, spotKey2, spotKey3);
 					}
 			}
@@ -32,51 +34,51 @@ public class mastermind
 				      {
 				        for(int col=0; col<board[0].length; col++)
 				          {
-				            board [row][col]= " ";
+				            board [row][col]= "      ";
 				          }
 				      }
 			}
 		public static void displayBoard()
 		{
-			System.out.print("   1   2   3 ");
+			System.out.print("      1        2        3 ");
 		    System.out.println();
-		    System.out.print(" -------------");
+		    System.out.print(" ----------------------------");
 		    System.out.println();
-		    System.out.print("A| "+board[0][0]+" | "+board[0][1]+" | "+board[0][2]+" |"+board [0][3]);
+		    System.out.print("A| "+board[0][0]+" | "+board[0][1]+" | "+board[0][2]+" | "+board [0][3]);
 		    System.out.println();
-		    System.out.print(" -------------");
+		    System.out.print(" ----------------------------");
 		    System.out.println();
-		    System.out.print("B| "+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+" |"+board [1][3]);
+		    System.out.print("B| "+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+" | "+board [1][3]);
 		    System.out.println();
-		    System.out.print(" -------------");
+		    System.out.print(" ----------------------------");
 		    System.out.println();
-		    System.out.print("C| "+board[2][0]+" | "+board[2][1]+" | "+board[2][2]+" |"+board [2][3]);
+		    System.out.print("C| "+board[2][0]+" | "+board[2][1]+" | "+board[2][2]+" | "+board [2][3]);
 		    System.out.println();
-		    System.out.print(" -------------");
+		    System.out.print(" ----------------------------");
 		    System.out.println();
-		    System.out.print("D| "+board[3][0]+" | "+board[3][1]+" | "+board[3][2]+" |"+board [3][3]);
+		    System.out.print("D| "+board[3][0]+" | "+board[3][1]+" | "+board[3][2]+" | "+board [3][3]);
 		    System.out.println();
-		    System.out.print(" -------------");
+		    System.out.print(" ----------------------------");
 		    System.out.println();
-		    System.out.print("E| "+board[4][0]+" | "+board[4][1]+" | "+board[4][2]+" |"+board [4][3]);
+		    System.out.print("E| "+board[4][0]+" | "+board[4][1]+" | "+board[4][2]+" | "+board [4][3]);
 		    System.out.println();
-		    System.out.print(" -------------");
+		    System.out.print(" ----------------------------");
 		    System.out.println();
-		    System.out.print("F| "+board[5][0]+" | "+board[5][1]+" | "+board[5][2]+" |"+board [5][3]);
+		    System.out.print("F| "+board[5][0]+" | "+board[5][1]+" | "+board[5][2]+" | "+board [5][3]);
 		    System.out.println();
-		    System.out.print(" -------------");
+		    System.out.print(" ----------------------------");
 		    System.out.println();	
-		    System.out.print("G| "+board[6][0]+" | "+board[6][1]+" | "+board[6][2]+" |"+board [6][3]);
+		    System.out.print("G| "+board[6][0]+" | "+board[6][1]+" | "+board[6][2]+" | "+board [6][3]);
 		    System.out.println();
-		    System.out.print(" -------------");
+		    System.out.print(" ----------------------------");
 		    System.out.println();
-		    System.out.print("H| "+board[7][0]+" | "+board[7][1]+" | "+board[7][2]+" |"+board [7][3]);
+		    System.out.print("H| "+board[7][0]+" | "+board[7][1]+" | "+board[7][2]+" | "+board [7][3]);
 		    System.out.println();
-		    System.out.print(" -------------");
+		    System.out.print(" ----------------------------");
 		    System.out.println();
-		    System.out.print("I| "+board[8][0]+" | "+board[8][1]+" | "+board[8][2]+" |"+board [8][3]);
+		    System.out.print("I| "+board[8][0]+" | "+board[8][1]+" | "+board[8][2]+" | "+board [8][3]);
 		    System.out.println();
-		    System.out.print(" -------------");
+		    System.out.print(" ----------------------------");
 		    System.out.println();	
 		}
 		public static void prepKey()
@@ -110,7 +112,7 @@ public class mastermind
 								{
 									key[row][col]="black";
 								}
-							System.out.println(key[row][col]);
+							//System.out.println(key[row][col]);
 							
 						}
 				}
@@ -147,19 +149,19 @@ public class mastermind
 		{
 			
 			
-			String colors= "1=red. 2=blue. 3=yellow. 4=green. 5=white. 6=black.";
+			String colors= "1 = red. 2 = blue. 3 = yellow. 4 = green. 5 = white. 6 = black.";
 			Scanner user= new Scanner(System.in);
 			System.out.println("Choose the color for spot 1");
 			System.out.println(colors);
 			int choice= user.nextInt();
 			if(choice == 1)
 				{
-					board [counter][0] ="red";
+					board [counter][0] ="red   ";
 					select="red";
 				}
 			else if(choice== 2)
 				{
-					board[counter][0] ="blue";
+					board[counter][0] ="blue  ";
 					select="blue";
 				}
 			else if (choice == 3)
@@ -169,17 +171,17 @@ public class mastermind
 				}
 			else if (choice == 4)
 				{
-					board [counter][0] ="green";
+					board [counter][0] ="green ";
 					select="green";
 				}
 			else if (choice == 5)
 				{
-					board [counter][0] ="white";
+					board [counter][0] ="white ";
 					select="white";
 				}
 			else if (choice == 6)
 				{
-					board [counter][0] ="black";
+					board [counter][0] ="black ";
 					select="black";
 				}
 			
@@ -188,12 +190,12 @@ public class mastermind
 			int choice2= user.nextInt();
 			if(choice2 == 1)
 				{
-					board [counter][1] ="red";
+					board [counter][1] ="red   ";
 					select2="red";
 				}
 			else if(choice2== 2)
 				{
-					board[counter][1] ="blue";
+					board[counter][1] ="blue  ";
 					select2="blue";
 				}
 			else if (choice2 == 3)
@@ -204,17 +206,17 @@ public class mastermind
 				}
 			else if (choice2 == 4)
 				{
-					board [counter][1] ="green";
+					board [counter][1] ="green ";
 					select2="green";
 				}
 			else if (choice2 == 5)
 				{
-					board [counter][1] ="white";
+					board [counter][1] ="white ";
 					select2="white";
 				}
 			else if (choice2 == 6)
 				{
-					board [counter][1] ="black";
+					board [counter][1] ="black ";
 					select2="black";
 				}
 			System.out.println("Choose the color for spot 3");
@@ -222,12 +224,12 @@ public class mastermind
 			int choice3= user.nextInt();
 			if(choice3 == 1)
 				{
-					board [counter][2] ="red";
+					board [counter][2] ="red   ";
 					select3="red";
 				}
 			else if(choice3== 2)
 				{
-					board[counter][2] ="blue";
+					board[counter][2] ="blue  ";
 					select3="blue";
 				}
 			else if (choice3 == 3)
@@ -237,17 +239,17 @@ public class mastermind
 				}
 			else if (choice3 == 4)
 				{
-					board [counter][2] ="green";
+					board [counter][2] ="green ";
 					select3="green";
 				}
 			else if (choice3 == 5)
 				{
-					board [counter][2] ="white";
+					board [counter][2] ="white ";
 					select3="white";
 				}
 			else if (choice3 == 6)
 				{
-					board [counter][2] ="black";
+					board [counter][2] ="black ";
 					select3="black";
 				}
 			
@@ -268,7 +270,7 @@ public class mastermind
 				}
 			else if(!(key[0][0].equals(select))&& (key[0][1].equals(select)) || (key[0][2].equals(select)))
 				{
-				spotKey1="Right Color, Wrong Spot";	
+				spotKey1="Right Color but Wrong Spot";	
 				}
 			
 			
@@ -283,7 +285,7 @@ public class mastermind
 				}
 			else if(!(key[0][1].equals(select2))&& (key[0][0].equals(select2)) || (key[0][2].equals(select2)))
 				{
-				spotKey2="Right Color, Wrong Spot";	
+				spotKey2="Right Color but Wrong Spot";	
 				}
 			
 			//SPOT THREE
@@ -297,21 +299,18 @@ public class mastermind
 				}
 			else if(!(key[0][2].equals(select3))&& (key[0][1].equals(select3)) || (key[0][0].equals(select3)))
 				{
-				spotKey3="Right Color, Wrong Spot";	
+				spotKey3="Right Color but Wrong Spot";	
 				}
-			
-			
-		}
-		public static void addSelect()
-		{
-			//FILL BOARD
-			String one=" ";
-			String two=" ";
-			String three=" ";
-			int randomAnwser = (int) (Math.random()*4);
-			board[counter][3]=("In no particular order:" +one+", "+two +", "+three+"." );
+			ArrayList <String> anwsers = new ArrayList<>();
+			anwsers.add(spotKey1);
+			anwsers.add(spotKey2);
+			anwsers.add(spotKey3);
+			Collections.shuffle(anwsers);
+			board[counter][3]= ("Anwsers, in no order: "+ anwsers);
 			counter++;
+			
 		}
+		
 		public static void checkGame(String spotKey1, String spotKey2, String spotKey3)
 		{
 		if(spotKey1.equals("Correct") && spotKey2.equals("Correct") && spotKey3.equals("Correct"))
