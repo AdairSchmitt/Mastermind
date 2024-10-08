@@ -14,8 +14,9 @@ public class mastermind
 		static String [][] board= new String [9][4];
 		static String [][] key = new String [1][3];
 		static int counter=0;
-		static String select, select2, select3 = " ";
-		static String spotKey1, spotKey2, spotKey3=" ";
+		//static String select, select2, select3 = " ";
+		static String [] checkers= new String [3];
+		//tatic String spotKey1, spotKey2, spotKey3=" ";
 		public static void main(String[] args)
 			{
 				prepBoard();
@@ -28,9 +29,9 @@ public class mastermind
 					{
 				displayBoard();
 				selectColor();
-				checkSelect(select, select2, select3);
+				checkSelect();
 				//addSelect();
-				checkGame(spotKey1, spotKey2, spotKey3);
+				checkGame();
 					}
 			}
 		
@@ -119,7 +120,7 @@ public class mastermind
 								{
 									key[row][col]="black";
 								}
-							//System.out.println(key[row][col]);
+							System.out.println(key[row][col]);
 							
 						}
 				}
@@ -154,173 +155,188 @@ public class mastermind
 		
 		public static void selectColor()
 		{
-			
-			
+			int selectCount=1;
+			for( int i=0; i<board[0].length-1; i++)
+				{
 			String colors= "1 = red. 2 = blue. 3 = yellow. 4 = green. 5 = white. 6 = black.";
 			Scanner user= new Scanner(System.in);
-			System.out.println("Choose the color for spot 1");
+			System.out.println("Choose the color for spot " +selectCount);
 			System.out.println(colors);
 			int choice= user.nextInt();
 			if(choice == 1)
 				{
-					board [counter][0] ="red   ";
-					select="red";
+					board [counter][i] ="red   ";
+					//select="red";
 				}
 			else if(choice== 2)
 				{
-					board[counter][0] ="blue  ";
-					select="blue";
+					board[counter][i] ="blue  ";
+					//select="blue";
 				}
 			else if (choice == 3)
 				{
-					board [counter][0] ="yellow";
-					select="yellow";
+					board [counter][i] ="yellow";
+					//select="yellow";
 				}
 			else if (choice == 4)
 				{
-					board [counter][0] ="green ";
-					select="green";
+					board [counter][i] ="green ";
+					//select="green";
 				}
 			else if (choice == 5)
 				{
-					board [counter][0] ="white ";
-					select="white";
+					board [counter][i] ="white ";
+					//-select="white";
 				}
 			else if (choice == 6)
 				{
-					board [counter][0] ="black ";
-					select="black";
+					board [counter][i] ="black ";
+					//select="black";
+				}
+			selectCount++;
 				}
 			
-			System.out.println("Choose the color for spot 2");
-			System.out.println(colors);
-			int choice2= user.nextInt();
-			if(choice2 == 1)
-				{
-					board [counter][1] ="red   ";
-					select2="red";
-				}
-			else if(choice2== 2)
-				{
-					board[counter][1] ="blue  ";
-					select2="blue";
-				}
-			else if (choice2 == 3)
-				{
-					board [counter][1] ="yellow";
-					select2="yellow";
-					
-				}
-			else if (choice2 == 4)
-				{
-					board [counter][1] ="green ";
-					select2="green";
-				}
-			else if (choice2 == 5)
-				{
-					board [counter][1] ="white ";
-					select2="white";
-				}
-			else if (choice2 == 6)
-				{
-					board [counter][1] ="black ";
-					select2="black";
-				}
-			System.out.println("Choose the color for spot 3");
-			System.out.println(colors);
-			int choice3= user.nextInt();
-			if(choice3 == 1)
-				{
-					board [counter][2] ="red   ";
-					select3="red";
-				}
-			else if(choice3== 2)
-				{
-					board[counter][2] ="blue  ";
-					select3="blue";
-				}
-			else if (choice3 == 3)
-				{
-					board [counter][2] ="yellow";
-					select3="yellow";
-				}
-			else if (choice3 == 4)
-				{
-					board [counter][2] ="green ";
-					select3="green";
-				}
-			else if (choice3 == 5)
-				{
-					board [counter][2] ="white ";
-					select3="white";
-				}
-			else if (choice3 == 6)
-				{
-					board [counter][2] ="black ";
-					select3="black";
-				}
+//			System.out.println("Choose the color for spot 2");
+//			System.out.println(colors);
+//			int choice2= user.nextInt();
+//			if(choice2 == 1)
+//				{
+//					board [counter][1] ="red   ";
+//					select="red";
+//				}
+//			else if(choice2== 2)
+//				{
+//					board[counter][1] ="blue  ";
+//					select2="blue";
+//				}
+//			else if (choice2 == 3)
+//				{
+//					board [counter][1] ="yellow";
+//					select2="yellow";
+//					
+//				}
+//			else if (choice2 == 4)
+//				{
+//					board [counter][1] ="green ";
+//					select2="green";
+//				}
+//			else if (choice2 == 5)
+//				{
+//					board [counter][1] ="white ";
+//					select2="white";
+//				}
+//			else if (choice2 == 6)
+//				{
+//					board [counter][1] ="black ";
+//					select2="black";
+//				}
+//			System.out.println("Choose the color for spot 3");
+//			System.out.println(colors);
+//			int choice3= user.nextInt();
+//			if(choice3 == 1)
+//				{
+//					board [counter][2] ="red   ";
+//					select3="red";
+//				}
+//			else if(choice3== 2)
+//				{
+//					board[counter][2] ="blue  ";
+//					select3="blue";
+//				}
+//			else if (choice3 == 3)
+//				{
+//					board [counter][2] ="yellow";
+//					select3="yellow";
+//				}
+//			else if (choice3 == 4)
+//				{
+//					board [counter][2] ="green ";
+//					select3="green";
+//				}
+//			else if (choice3 == 5)
+//				{
+//					board [counter][2] ="white ";
+//					select3="white";
+//				}
+//			else if (choice3 == 6)
+//				{
+//					board [counter][2] ="black ";
+//					select3="black";
+//				}
 			
 		
 		}
-		public static void checkSelect(String select, String select2, String select3)
+		public static void checkSelect()
 		{
 			
 			
 			//SPOT ONE
-			if(key[0][0].equals(select))
-				{
-					spotKey1="Correct";
-				}
-			else if(!(key[0][0].equals(select))&& !(key[0][1].equals(select)) && !(key[0][2].equals(select)) )
-				{
-					spotKey1="Wrong";
-				}
-			else if(!(key[0][0].equals(select))&& (key[0][1].equals(select)) || (key[0][2].equals(select)))
-				{
-				spotKey1="Right Color but Wrong Spot";	
+			// take each spotKey and associate it with a number from count so if count = 0 then = spot key 1 then = answer
+			
+			for (int check =0; check<checkers.length; check++)
+					{
+					for (int i=0; i<board[0].length-1; i++)
+						{
+							for (int col=0; col<key[0].length; col++)
+								{
+							if(key[0][col].equals(board[counter][i]))
+								{
+									checkers[check]="Correct";
+								}
+							else if(!(key[0][col].equals(board[counter][i])) && (key[0][col].contains(board[counter][i])) )
+									{
+										checkers[check]="Right Color but Wrong Spot";	
+									}
+							else if(!(key[0][col].contains(board[counter][i]))  )
+											{
+												checkers[check]="Wrong";
+											}
+								}
+									}
 				}
 			
 			
-			//SPOT TWO
-			if(key[0][1].equals(select2))
-				{
-					spotKey2="Correct";
-				}
-			else if(!(key[0][1].equals(select2))&& !(key[0][0].equals(select2)) && !(key[0][2].equals(select2)) )
-				{
-					spotKey2="Wrong";
-				}
-			else if(!(key[0][1].equals(select2))&& (key[0][0].equals(select2)) || (key[0][2].equals(select2)))
-				{
-				spotKey2="Right Color but Wrong Spot";	
-				}
+//			//SPOT TWO
+//			if(key[0][1].equals(select2))
+//				{
+//					spotKey2="Correct";
+//				}
+//			else if(!(key[0][1].equals(select2))&& !(key[0][0].equals(select2)) && !(key[0][2].equals(select2)) )
+//				{
+//					spotKey2="Wrong";
+//				}
+//			else if(!(key[0][1].equals(select2))&& (key[0][0].equals(select2)) || (key[0][2].equals(select2)))
+//				{
+//				spotKey2="Right Color but Wrong Spot";	
+//				}
+//			
+//			//SPOT THREE
+//			if(key[0][2].equals(select3))
+//				{
+//					spotKey3="Correct";
+//				}
+//			else if(!(key[0][2].equals(select3))&& !(key[0][1].equals(select3)) && !(key[0][0].equals(select3)) )
+//				{
+//					spotKey3="Wrong";
+//				}
+//			else if(!(key[0][2].equals(select3))&& (key[0][1].equals(select3)) || (key[0][0].equals(select3)))
+//				{
+//				spotKey3="Right Color but Wrong Spot";	
+//				}
 			
-			//SPOT THREE
-			if(key[0][2].equals(select3))
-				{
-					spotKey3="Correct";
-				}
-			else if(!(key[0][2].equals(select3))&& !(key[0][1].equals(select3)) && !(key[0][0].equals(select3)) )
-				{
-					spotKey3="Wrong";
-				}
-			else if(!(key[0][2].equals(select3))&& (key[0][1].equals(select3)) || (key[0][0].equals(select3)))
-				{
-				spotKey3="Right Color but Wrong Spot";	
-				}
 			ArrayList <String> anwsers = new ArrayList<>();
-			anwsers.add(spotKey1);
-			anwsers.add(spotKey2);
-			anwsers.add(spotKey3);
+			anwsers.add(checkers[0]);
+			anwsers.add(checkers[1]);
+			anwsers.add(checkers[2]);
 			Collections.shuffle(anwsers);
 			board[counter][3]= ("Anwsers, in no order: "+ anwsers);
 			counter++;
 			
 		}
 		
-		public static void checkGame(String spotKey1, String spotKey2, String spotKey3)
+		public static void checkGame()
 		{
-		if(spotKey1.equals("Correct") && spotKey2.equals("Correct") && spotKey3.equals("Correct"))
+		if(checkers[0].equals("Correct") && checkers[1].equals("Correct") && checkers[2].equals("Correct"))
 			{
 				System.out.println("You Win!");
 				System.exit(0);
