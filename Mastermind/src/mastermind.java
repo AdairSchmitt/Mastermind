@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class mastermind
 //no checking of select, it completely crashed
-
+// fix
 	{
 		static String [][] board= new String [9][4];
 		static String [][] key = new String [1][3];
