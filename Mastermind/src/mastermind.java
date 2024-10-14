@@ -2,13 +2,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class mastermind
-// TO DO: Make levels or let player choose the size of the board or just change colors????
-// Idea about above:	make new String[info*3][info+1]
-// put key responses in a for loop -> need another counter???? how to make it work with different board sizes??
-// fix key with the board?
-// make sure that it will add as many input colors as needed? -> put in for loop!!!!
-// add variables select and spotKey AHHHHHHHHHHH
-// HELPPPPPPPPPPP
+//no checking of select, it completely crashed
 
 	{
 		static String [][] board= new String [9][4];
@@ -16,7 +10,7 @@ public class mastermind
 		static int counter=0;
 		//static String select, select2, select3 = " ";
 		static String [] checkers= new String [3];
-		//tatic String spotKey1, spotKey2, spotKey3=" ";
+		//static String spotKey1, spotKey2, spotKey3=" ";
 		public static void main(String[] args)
 			{
 				prepBoard();
@@ -98,11 +92,11 @@ public class mastermind
 							int keyNum = (int) (Math.random() * 6)+1;
 							if(keyNum == 1)
 								{
-									key[row][col]="red";
+									key[row][col]="red   ";
 								}
 							else if(keyNum == 2)
 								{
-									key[row][col]="blue";
+									key[row][col]="blue  ";
 								}
 							else if (keyNum == 3)
 								{
@@ -110,15 +104,15 @@ public class mastermind
 								}
 							else if (keyNum == 4)
 								{
-									key[row][col]="green";
+									key[row][col]="green ";
 								}
 							else if (keyNum == 5)
 								{
-									key[row][col]="white";
+									key[row][col]="white ";
 								}
 							else if (keyNum == 6)
 								{
-									key[row][col]="black";
+									key[row][col]="black ";
 								}
 							System.out.println(key[row][col]);
 							
@@ -273,28 +267,7 @@ public class mastermind
 			//SPOT ONE
 			// take each spotKey and associate it with a number from count so if count = 0 then = spot key 1 then = answer
 			
-			for (int check =0; check<checkers.length; check++)
-					{
-					for (int i=0; i<board[0].length-1; i++)
-						{
-							for (int col=0; col<key[0].length; col++)
-								{
-							if(key[0][col].equals(board[counter][i]))
-								{
-									checkers[check]="Correct";
-								}
-							else if(!(key[0][col].equals(board[counter][i])) && (key[0][col].contains(board[counter][i])) )
-									{
-										checkers[check]="Right Color but Wrong Spot";	
-									}
-							else if(!(key[0][col].contains(board[counter][i]))  )
-											{
-												checkers[check]="Wrong";
-											}
-								}
-									}
-				}
-			
+
 			
 //			//SPOT TWO
 //			if(key[0][1].equals(select2))
@@ -324,12 +297,12 @@ public class mastermind
 //				spotKey3="Right Color but Wrong Spot";	
 //				}
 			
-			ArrayList <String> anwsers = new ArrayList<>();
-			anwsers.add(checkers[0]);
-			anwsers.add(checkers[1]);
-			anwsers.add(checkers[2]);
-			Collections.shuffle(anwsers);
-			board[counter][3]= ("Anwsers, in no order: "+ anwsers);
+			//ArrayList <String> anwsers = new ArrayList<>();
+			//anwsers.add(checkers[0]);
+			//anwsers.add(checkers[1]);
+			//anwsers.add(checkers[2]);
+			//Collections.shuffle(anwsers);
+			board[counter][3]= ("Anwsers, in no order: "+ checkers[0]+ checkers[1]+ checkers[2]);
 			counter++;
 			
 		}
@@ -344,3 +317,35 @@ public class mastermind
 		}
 
 	}
+//for (int j =0; j<checkers.length; j++)
+//{
+//	System.out.println("j = " + j);
+//	for (int i=0; i<board[0].length-1; i++)
+//	{
+//		System.out.println("i = " + i);
+//		for (int col=0; col<key[0].length; col++)
+//			{
+//				System.out.println("col = " + col);	
+//		if(key[0][col].equals(board[counter][i]))
+//			{
+//				checkers[j]="Correct";
+////				System.out.println(key[0][col]+board [counter][i]);
+////				System.out.println("corrects");
+//			}
+//		else if(!(key[0][col].equals(board[counter][i])) && (key[0][col].contains(board[counter][i])) )
+//				{
+//					checkers[j]="Right Color but Wrong Spot";
+////					System.out.println(key[0][col]+board [counter][i]);
+////					System.out.println("right wrong place");
+//				}
+//		else if(!(key[0][col].contains(board[counter][i]))  )
+//						{
+//							checkers[j]="Wrong";
+////							System.out.println(key[0][col]+board [counter][i]);
+////							System.out.println("wrong");
+//						}
+//			}
+//				
+//	}
+//}
+
